@@ -6,46 +6,75 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:51:33 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/16 21:16:33 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/18 20:14:05 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name):_hit_pts(10), _energy_pts(10), _attack_damage(10)
+ClapTrap::ClapTrap(std::string name) : _hit_pts(10), _energy_pts(10), _attack_damage(0)
 {
 	this->_name = name;
+	std::cout << "Constructor called"
+			  << "\n\tname:" << this->getName()
+			  << "\n\thit_pts:" << this->getHitPts()
+			  << "\n\tenergy_pts:" << this->getEnergyPts()
+			  << "\n\tattack_damage:" << this->getAttackDamage()
+			  << std::endl;
 }
-ClapTrap::~ClapTrap(void){}
+ClapTrap::~ClapTrap(void) { std::cout << "Destructor called" << std::endl; }
 
-//setters and getters
-void ClapTrap::setName(std::string name)
+/**
+ * copy constructor
+ * ClapTrap b(a)
+ *
+ * initilized b, copying a into b
+ */
+ClapTrap::ClapTrap(const ClapTrap &claptrap)
 {
-	this->_name = name;
+	std::cout << "Copy construcctor called" << std::endl;
+	*this = claptrap;
 }
 
-std::string ClapTrap::getName(void)
+/**
+ * Overload Assignment
+ * b = a
+ *
+ * both are initialized
+ * copies a into b
+ */
+ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap)
 {
-	return this->_name;
+	std::cout << "Assignment overload called" << std::endl;
+	if (this != &claptrap)
+	{
+		this->_name = claptrap._name;
+		this->_hit_pts = claptrap._hit_pts;
+		this->_energy_pts = claptrap._energy_pts;
+		this->_attack_damage = claptrap._attack_damage;
+	}
+	return *this;
 }
 
-int ClapTrap::getHit(void)
-{
-	return this->_hit_pts;
-}
+// setters and getters
 
-int ClapTrap::getEnergy(void)
-{
-	return this->_energy_pts;
-}
+void ClapTrap::setName(std::string name) { this->_name = name; }
 
-int ClapTrap::getAttack(void)
-{
-	return this->_attack_damage;
-}
+void ClapTrap::setHitPts(unsigned int amount) { this->_hit_pts -= amount; }
 
+void ClapTrap::setEnergyPts(unsigned int amount) { this->_energy_pts -= amount; }
 
-//member functs
+void ClapTrap::setAttackDamage(unsigned int amount) { this->_attack_damage -= amount; }
+
+std::string ClapTrap::getName(void) { return this->_name; }
+
+int ClapTrap::getHitPts(void) { return this->_hit_pts; }
+
+int ClapTrap::getEnergyPts(void) { return this->_energy_pts; }
+
+int ClapTrap::getAttackDamage(void) { return this->_attack_damage; }
+
+// member functs
 
 /**
  * when a claptrap attacks
@@ -54,14 +83,34 @@ int ClapTrap::getAttack(void)
  */
 void ClapTrap::attack(const std::string &target)
 {
-	(void)target;
-	std::cout << "<name> attacks , causing <damage< points of damage" << std::endl;
+	if (this->_hit_pts == 0 || this->_energy_pts == 0)
+	{
+		std::cout << this->_name << " is no longer able to attack" << std::endl;
+		return;
+	}
+	this->_energy_pts -= 1;
+	std::cout << ORANGE
+			  << this->_name
+			  << " attacks "
+			  << target
+			  << ", causing "
+			  << this->_attack_damage
+			  << " points of damage"
+			  << RESET << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	(void)amount;
-	std::cout << "<name> taked <damage> of damage" << std::endl;
+	if (amount >= this->_hit_pts)
+		this->_hit_pts = 0;
+	else
+		this->_hit_pts -= amount;
+	std::cout << RED
+			  << this->_name
+			  << " took "
+			  << amount
+			  << " points of damage"
+			  << RESET << std::endl;
 }
 
 /**
@@ -70,6 +119,27 @@ void ClapTrap::takeDamage(unsigned int amount)
  */
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	(void)amount;
-	std::cout << "<name> reapirs itself <amount>" << std::endl;
+	if (this->_energy_pts == 0)
+	{
+		std::cout << this->_name << " is no longer able to be repaired" << std::endl;
+		return;
+	}
+	this->_hit_pts += amount;
+	this->_energy_pts -= 1;
+	std::cout << GREEN
+			  << this->_name
+			  << " repaired itself "
+			  << amount
+			  << " of energy points"
+			  << RESET << std::endl;
+}
+
+void ClapTrap::status(void)
+{
+	std::cout << CYAN
+			  << this->_name << "\n"
+			  << "\thit points: " << this->_hit_pts << "\n"
+			  << "\tenergy points:" << this->_energy_pts << "\n"
+			  << "\tattack damage: " << this->_attack_damage << "\n"
+			  << RESET << std::endl;
 }
