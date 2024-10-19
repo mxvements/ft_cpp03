@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:51:33 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 21:16:32 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/19 21:38:02 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ ClapTrap::~ClapTrap(void)
  *
  * initilized b, copying a into b
  */
-ClapTrap::ClapTrap(const ClapTrap &claptrap)
+ClapTrap::ClapTrap(const ClapTrap &src)
 {
 	std::cout << this->getClassName() << ": Copy construcctor called" << std::endl;
-	*this = claptrap;
+	*this = src;
 }
 
 /**
@@ -46,15 +46,15 @@ ClapTrap::ClapTrap(const ClapTrap &claptrap)
  * both are initialized
  * copies a into b
  */
-ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap)
+ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 {
 	std::cout << this->getClassName() << ": Assignment overload called" << std::endl;
-	if (this != &claptrap)
+	if (this != &src)
 	{
-		this->_name = claptrap._name;
-		this->_hit_pts = claptrap._hit_pts;
-		this->_energy_pts = claptrap._energy_pts;
-		this->_attack_damage = claptrap._attack_damage;
+		this->_name = src._name;
+		this->_hit_pts = src._hit_pts;
+		this->_energy_pts = src._energy_pts;
+		this->_attack_damage = src._attack_damage;
 	}
 	return *this;
 }

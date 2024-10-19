@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:52:02 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 17:03:20 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/19 21:37:47 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ class ClapTrap
 		ClapTrap(void);
 		ClapTrap(std::string name);
 		~ClapTrap(void);
-		ClapTrap(const ClapTrap &claptrap);
-		ClapTrap &operator=(const ClapTrap &claptrap);
+		ClapTrap(const ClapTrap &src);
+		ClapTrap &operator=(const ClapTrap &src);
 		//setters and getters
 		void setName(std::string name);
 		void setHitPts(unsigned int amount);
