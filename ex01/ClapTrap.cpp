@@ -6,23 +6,26 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:51:33 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/18 20:14:05 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:12:38 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void)
+{
+	std::cout << this->getClassName() << ": Constructor called" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name) : _hit_pts(10), _energy_pts(10), _attack_damage(0)
 {
 	this->_name = name;
-	std::cout << "Constructor called"
-			  << "\n\tname:" << this->getName()
-			  << "\n\thit_pts:" << this->getHitPts()
-			  << "\n\tenergy_pts:" << this->getEnergyPts()
-			  << "\n\tattack_damage:" << this->getAttackDamage()
-			  << std::endl;
+	std::cout << this->getClassName() << ": Constructor called"  << std::endl;
 }
-ClapTrap::~ClapTrap(void) { std::cout << "Destructor called" << std::endl; }
+ClapTrap::~ClapTrap(void)
+{
+	std::cout << this->getClassName() << ": Destructor called" << std::endl;
+}
 
 /**
  * copy constructor
@@ -32,7 +35,7 @@ ClapTrap::~ClapTrap(void) { std::cout << "Destructor called" << std::endl; }
  */
 ClapTrap::ClapTrap(const ClapTrap &claptrap)
 {
-	std::cout << "Copy construcctor called" << std::endl;
+	std::cout << this->getClassName() << ": Copy construcctor called" << std::endl;
 	*this = claptrap;
 }
 
@@ -45,7 +48,7 @@ ClapTrap::ClapTrap(const ClapTrap &claptrap)
  */
 ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap)
 {
-	std::cout << "Assignment overload called" << std::endl;
+	std::cout << this->getClassName() << ": Assignment overload called" << std::endl;
 	if (this != &claptrap)
 	{
 		this->_name = claptrap._name;
@@ -74,6 +77,7 @@ int ClapTrap::getEnergyPts(void) { return this->_energy_pts; }
 
 int ClapTrap::getAttackDamage(void) { return this->_attack_damage; }
 
+std::string ClapTrap::getClassName(void) { return ("ClapTrap"); }
 // member functs
 
 /**

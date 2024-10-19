@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:52:02 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/18 20:11:06 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:03:20 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,14 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string		_name;
 		unsigned int	_hit_pts; // = 10; health
 		unsigned int	_energy_pts; // = 10; mana, ability to attack or be repaired
 		unsigned int	_attack_damage; // = 0; amount of damage
 	
 	public:
+		ClapTrap(void);
 		ClapTrap(std::string name);
 		~ClapTrap(void);
 		ClapTrap(const ClapTrap &claptrap);
@@ -69,6 +70,7 @@ class ClapTrap
 		int getHitPts(void);
 		int getEnergyPts(void);
 		int getAttackDamage(void);
+		std::string getClassName(void);
 		//member functs
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);

@@ -6,11 +6,11 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 20:18:14 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/18 20:31:00 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:18:39 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAPP_HPP
+#ifndef SCAVTRAP_HPP
 #define SCAVTRAP_HPP
 
 #include <iostream>
@@ -25,11 +25,18 @@
 
 class ScavTrap: public ClapTrap
 {
+	private:
+	
 	public:
 		ScavTrap(void);
+		ScavTrap(std::string name);
 		~ScavTrap(void);
 		ScavTrap(const ScavTrap &scavtrap);
 		ScavTrap &operator=(const ScavTrap &scavtrap);
+
+		std::string getClassName(void);
+		void attack(const std::string &target);
+		void guardGate(void);
 } ;
 
 #endif

@@ -6,11 +6,13 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:51:33 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/18 20:14:05 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/19 16:26:19 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(void) { std::cout << "Constructor called " << std::endl; }
 
 ClapTrap::ClapTrap(std::string name) : _hit_pts(10), _energy_pts(10), _attack_damage(0)
 {

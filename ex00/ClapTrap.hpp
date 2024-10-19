@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:52:02 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/18 20:11:06 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/19 16:26:28 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ class ClapTrap
 		unsigned int	_attack_damage; // = 0; amount of damage
 	
 	public:
+		ClapTrap(void);
 		ClapTrap(std::string name);
 		~ClapTrap(void);
 		ClapTrap(const ClapTrap &claptrap);
