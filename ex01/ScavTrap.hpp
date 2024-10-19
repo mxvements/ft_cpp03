@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 20:18:14 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 17:18:39 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/19 21:33:40 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ class ScavTrap: public ClapTrap
 		ScavTrap(void);
 		ScavTrap(std::string name);
 		~ScavTrap(void);
-		ScavTrap(const ScavTrap &scavtrap);
-		ScavTrap &operator=(const ScavTrap &scavtrap);
+		ScavTrap(const ScavTrap &src);
+		ScavTrap &operator=(const ScavTrap &src);
 
 		std::string getClassName(void);
 		void attack(const std::string &target);

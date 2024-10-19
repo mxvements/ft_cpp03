@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 20:18:11 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 17:55:05 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/19 21:34:27 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
 	std::cout << this->getClassName() << ": Constructor called" << std::endl;
+	this->_hit_pts = 100;
+	this->_energy_pts = 50;
+	this->_attack_damage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -30,21 +33,21 @@ ScavTrap::~ScavTrap(void)
 	std::cout << this->getClassName() << ": Destructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &scavtrap)
+ScavTrap::ScavTrap(const ScavTrap &src)
 {
 	std::cout << this->getClassName() << ": Copy construcctor called" << std::endl;
-	*this = scavtrap;
+	*this = src;
 }
 
-ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap)
+ScavTrap &ScavTrap::operator=(const ScavTrap &src)
 {
 	std::cout << this->getClassName() << ": Assignment overload called" << std::endl;
-	if (this != &scavtrap)
+	if (this != &src)
 	{
-		this->_name = scavtrap._name;
-		this->_hit_pts = scavtrap._hit_pts;
-		this->_energy_pts = scavtrap._energy_pts;
-		this->_attack_damage = scavtrap._attack_damage;
+		this->_name = src._name;
+		this->_hit_pts = src._hit_pts;
+		this->_energy_pts = src._energy_pts;
+		this->_attack_damage = src._attack_damage;
 	}
 	return *this;
 }
