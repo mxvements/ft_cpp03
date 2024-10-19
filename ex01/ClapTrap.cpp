@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:51:33 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 17:12:38 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/19 19:10:08 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 			  << this->_name
 			  << " repaired itself "
 			  << amount
-			  << " of energy points"
+			  << " of hit points"
 			  << RESET << std::endl;
 }
 
