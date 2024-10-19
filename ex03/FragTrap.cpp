@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 18:02:09 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 18:21:58 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/19 20:59:29 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 FragTrap::FragTrap(void)
 {
 	std::cout << this->getClassName() << ": Constructor called" << std::endl;
+	this->_hit_pts = 100;
+	this->_energy_pts = 100;
+	this->_attack_damage = 30;
 }
 
 FragTrap::FragTrap(std::string name): ClapTrap(name)

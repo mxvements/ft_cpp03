@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 20:18:11 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 17:55:05 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/19 20:56:14 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
 	std::cout << this->getClassName() << ": Constructor called" << std::endl;
+	this->_hit_pts = 100;
+	this->_energy_pts = 50;
+	this->_attack_damage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)

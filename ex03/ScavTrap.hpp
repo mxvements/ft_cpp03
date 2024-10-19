@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 20:18:14 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 18:40:54 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/19 20:27:34 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@
  * however, construtors, destructor and attack() print different messages
  */
 
-class ScavTrap: public ClapTrap
+class ScavTrap: virtual public ClapTrap
 {
+	protected:
+	
 	private:
 	
 	public:

@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:51:33 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 19:10:19 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/10/19 21:16:25 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap)
 
 void ClapTrap::setName(std::string name) { this->_name = name; }
 
-void ClapTrap::setHitPts(unsigned int amount) { this->_hit_pts -= amount; }
+void ClapTrap::setHitPts(unsigned int amount) { this->_hit_pts = amount; }
 
-void ClapTrap::setEnergyPts(unsigned int amount) { this->_energy_pts -= amount; }
+void ClapTrap::setEnergyPts(unsigned int amount) { this->_energy_pts = amount; }
 
-void ClapTrap::setAttackDamage(unsigned int amount) { this->_attack_damage -= amount; }
+void ClapTrap::setAttackDamage(unsigned int amount) { this->_attack_damage = amount; }
 
 std::string ClapTrap::getName(void) { return this->_name; }
 

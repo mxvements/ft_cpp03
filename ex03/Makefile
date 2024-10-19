@@ -1,11 +1,12 @@
-NAME=	fragtrap
+NAME=	diamondtrap
 CC=		clang++
 FLAGS=	-Wall -Wextra -Werror -g3 -std=c++98
 
 FILES=		main.cpp \
 			ClapTrap.cpp \
 			ScavTrap.cpp \
-			FragTrap.cpp
+			FragTrap.cpp \
+			DiamondTrap.cpp
 OBJ_PATH=	obj/
 OBJ=		$(FILES:%.cpp=$(OBJ_PATH)%.o)
 
