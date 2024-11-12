@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:51:37 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 21:31:33 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:33:39 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(void)
 	std::cout << "DT name: " << dt.getName() << std::endl;
 	std::cout << "CT name: " << dt.ScavTrap::getName() << std::endl;
 	dt.status();
+	dt.whoAmI();
 
 	DiamondTrap dt_copy(dt);
 	dt_copy.setName("dt_copy");

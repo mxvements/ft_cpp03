@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 19:13:33 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 21:27:16 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:30:56 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class DiamondTrap: public ScavTrap, public FragTrap
 		void setName(std::string name);
 		std::string getName(void);
 		std::string getClassName(void);
+
+		void whoAmI();
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 20:18:11 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 20:56:14 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:19:20 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,11 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap)
 	std::cout << this->getClassName() << ": Assignment overload called" << std::endl;
 	if (this != &scavtrap)
 	{
-		this->_name = scavtrap._name;
-		this->_hit_pts = scavtrap._hit_pts;
-		this->_energy_pts = scavtrap._energy_pts;
-		this->_attack_damage = scavtrap._attack_damage;
+		ClapTrap::operator=(scavtrap);
+		// this->_name = scavtrap._name;
+		// this->_hit_pts = scavtrap._hit_pts;
+		// this->_energy_pts = scavtrap._energy_pts;
+		// this->_attack_damage = scavtrap._attack_damage;
 	}
 	return *this;
 }

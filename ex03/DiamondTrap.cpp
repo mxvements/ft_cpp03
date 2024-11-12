@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 19:13:31 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 21:29:16 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:34:30 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &src)
 	{
 		this->_name = src._name;
 		ClapTrap::setName(src._name + "_clap_name");
-		FragTrap::setHitPts( src._hit_pts );
+		FragTrap::setHitPts(src._hit_pts);
 		ScavTrap::setEnergyPts(src._energy_pts);
 		FragTrap::setAttackDamage(src._attack_damage);
 	}
@@ -66,4 +66,14 @@ std::string DiamondTrap::getName(void)
 std::string DiamondTrap::getClassName(void)
 {
 	return ("DiamondTrap");
+}
+
+void DiamondTrap::whoAmI()
+{
+	std::cout << LGREEN << "I am: "
+			  << "as a claptrap: "
+			  << ClapTrap::getName()
+			  << " as a diamondtrap: "
+			  << this->getName()
+			  << RESET << std::endl;
 }

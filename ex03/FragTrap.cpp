@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 18:02:09 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 20:59:29 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:19:28 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,11 @@ FragTrap &FragTrap::operator=(const FragTrap &fragtrap)
 	std::cout << this->getClassName() << ": Assignment overload called" << std::endl;
 	if (this != &fragtrap)
 	{
-		this->_name = fragtrap._name;
-		this->_hit_pts = fragtrap._hit_pts;
-		this->_energy_pts = fragtrap._energy_pts;
-		this->_attack_damage = fragtrap._attack_damage;
+		ClapTrap::operator=(fragtrap);
+		// this->_name = fragtrap._name;
+		// this->_hit_pts = fragtrap._hit_pts;
+		// this->_energy_pts = fragtrap._energy_pts;
+		// this->_attack_damage = fragtrap._attack_damage;
 	}
 	return *this;
 }
