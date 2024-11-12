@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:51:37 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 19:08:32 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:22:51 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	main(void)
 	claptrap.takeDamage(6);
 	claptrap.status();
 	claptrap.beRepaired(2);
+	claptrap.status();
+	claptrap.attack("target");
 	claptrap.status();
 
 	ClapTrap ft_assign;

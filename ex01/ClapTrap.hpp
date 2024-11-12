@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:52:02 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 21:37:47 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:52:20 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,20 +61,24 @@ class ClapTrap
 		~ClapTrap(void);
 		ClapTrap(const ClapTrap &src);
 		ClapTrap &operator=(const ClapTrap &src);
+		
 		//setters and getters
 		void setName(std::string name);
 		void setHitPts(unsigned int amount);
 		void setEnergyPts(unsigned int amount);
 		void setAttackDamage(unsigned int amount);
+		
 		std::string getName(void);
 		int getHitPts(void);
 		int getEnergyPts(void);
 		int getAttackDamage(void);
 		std::string getClassName(void);
+		
 		//member functs
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		
 		virtual	void status(void);
 } ;
 

@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 20:18:11 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 21:34:27 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:37:08 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void ScavTrap::attack(const std::string &target)
 	}
 	this->_energy_pts -= 1;
 	std::cout << ORANGE
+			  << "ScavTrap "
 			  << this->_name
 			  << " attacks "
 			  << target

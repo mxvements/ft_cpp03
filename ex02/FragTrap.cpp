@@ -6,14 +6,17 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 18:02:09 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 21:36:14 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:47:37 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void)
+FragTrap::FragTrap(void) : ClapTrap()
 {
+	this->_hit_pts = 100;
+	this->_energy_pts = 100;
+	this->_attack_damage = 30;
 	std::cout << this->getClassName() << ": Constructor called" << std::endl;
 }
 

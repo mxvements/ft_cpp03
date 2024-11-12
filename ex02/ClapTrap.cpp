@@ -6,7 +6,7 @@
 /*   By: luciama2 <luciama2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:51:33 by luciama2          #+#    #+#             */
-/*   Updated: 2024/10/19 21:35:35 by luciama2         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:06:00 by luciama2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 ClapTrap::ClapTrap(void)
 {
+	this->_hit_pts = 10;
+	this->_energy_pts = 10;
+	this->_attack_damage = 0;
 	std::cout << this->getClassName() << ": Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _hit_pts(10), _energy_pts(10), _attack_damage(0)
 {
 	this->_name = name;
-	std::cout << this->getClassName() << ": Constructor called"  << std::endl;
+	std::cout << this->getClassName() << ": Constructor called" << std::endl;
 }
 ClapTrap::~ClapTrap(void)
 {
@@ -105,7 +108,12 @@ void ClapTrap::attack(const std::string &target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (amount >= this->_hit_pts)
+	if (this->_hit_pts == 0)
+	{
+		std::cout << this->_name << "is already dead" << std::endl;
+		return ;
+	}
+	else if (amount >= this->_hit_pts)
 		this->_hit_pts = 0;
 	else
 		this->_hit_pts -= amount;
